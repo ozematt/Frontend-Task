@@ -51,7 +51,7 @@
     </section> -->
 
     <!-- FEATURED PRODUCTS SECTION  -->
-    <section class="featured-products container" id="featured-products-section">
+    <!-- <section class="featured-products container" id="featured-products-section">
       <header class="featured-products__title">
         <span class="subtitle">FEATURED PRODUCTS</span>
         <h2>Browse featured</h2>
@@ -64,16 +64,16 @@
           class="slider-arrow-next swiper-button-next"
         />
         <div class="products-slider swiper-wrapper">
-          <!-- PRODUCT 1 -->
+       
           <div class="product-card swiper-slide">
             <div class="product-card__image">
               <div class="product-accent bestseller">BESTSELLER</div>
               <div class="fav-icon"></div>
-              <div class="swiper-lazy-preloader"></div>
+             
               <img
                 src="assets/images/product-photo-00.webp"
                 alt="jacket"
-                class="product-photo swiper-lazy"
+                class="product-photo"
               />
             </div>
             <div class="product-card__title">
@@ -82,7 +82,7 @@
             </div>
           </div>
 
-          <!-- PRODUCT 2 -->
+         
           <div class="product-card swiper-slide">
             <div class="product-card__image">
               <div class="product-accent limited-edition">LIMITED EDITION</div>
@@ -99,7 +99,7 @@
             </div>
           </div>
 
-          <!-- PRODUCT 3 -->
+      
           <div class="product-card swiper-slide">
             <div class="product-card__image">
               <div class="fav-icon"></div>
@@ -115,7 +115,7 @@
             </div>
           </div>
 
-          <!-- PRODUCT 4 -->
+         
           <div class="product-card swiper-slide">
             <div class="product-card__image">
               <div class="product-accent bestseller">BESTSELLER</div>
@@ -132,7 +132,7 @@
             </div>
           </div>
 
-          <!-- PRODUCT 5 -->
+       
           <div class="product-card swiper-slide">
             <div class="product-card__image">
               <div class="product-accent bestseller">BESTSELLER</div>
@@ -151,16 +151,36 @@
         </div>
         <div class="swiper-scrollbar scrollbar"></div>
       </div>
-    </section>
+    </section> -->
 
+    <!-- PRODUCT LIST SECTION -->
     <section class="product-list container">
-      <div class="page-select">
-        <label for="products">NUMBER OF PRODUCTS</label>
-        <select id="products-quantity" name="products">
-          <option value="8">8</option>
-          <option value="20" selected>14</option>
-          <option value="40">40</option>
-        </select>
+      <!-- SELECT WRAPPER -->
+      <div class="custom-select-wrapper">
+        <div class="custom-select">
+          <!-- TITLE -->
+          <div class="custom-select__title">
+            <span>NUMBER OF PRODUCTS PER PAGE</span>
+            <div class="selected">
+              <div class="selected__content">
+                <span class="selected__value">14</span>
+                <img
+                  src="assets/icons/arrow-down-icon.svg"
+                  alt="arrow down icon"
+                />
+              </div>
+              <div class="option" data-value="option2">24</div>
+              <div class="option-separator"></div>
+              <div class="option" data-value="option3">36</div>
+            </div>
+          </div>
+          <!-- OPTIONS -->
+          <!-- <div class="options-container">
+            <div class="option" data-value="option1">14</div>
+            <div class="option" data-value="option2">24</div>
+            <div class="option" data-value="option3">36</div>
+          </div> -->
+        </div>
       </div>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
