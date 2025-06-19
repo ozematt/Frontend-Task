@@ -3,18 +3,167 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
     <title>Exercise - Frontend</title>
   </head>
   <body>
+    <!-- NAVIGATION -->
     <header class="navigation-wrapper">
       <nav class="navigation container">
-        <a href="#" class="logo"></a>
-        <ul class="menu">
-          <li></li>
+        <div class="logo-wrapper">
+          <a href="#" class="logo">
+            <p class="logo-text">FORMA'SINT.</p>
+          </a>
+          <p>IDOMODS &lt;/&gt;</p>
+        </div>
+
+        <ul class="navigation__nav-links">
+          <li class="nav-link"><a href="#">HOME</a></li>
+          <li class="nav-link">
+            <a href="#featured-products-section">FEATURED PRODUCTS</a>
+          </li>
+          <li class="nav-link"><a href="">PRODUCT LISTING</a></li>
         </ul>
+
+        <a href="#" class="navigation__user">
+          <img src="assets/icons/user-icon.svg" alt="user icon" />
+          <p>FRONTEND DEVELOPER</p>
+        </a>
       </nav>
     </header>
+
+    <!-- HERO SECTION -->
+    <!-- <section class="hero container">
+      <header>
+        <h1>
+          <img src="assets/icons/logo.svg" alt="FORMA'SINT. - home page" />
+        </h1>
+      </header>
+
+      <img
+        src="assets/images/hero-image.webp"
+        alt="Ice climber with axe looking up at glacier"
+      />
+    </section> -->
+
+    <!-- FEATURED PRODUCTS SECTION  -->
+    <section class="featured-products container" id="featured-products-section">
+      <header class="featured-products__title">
+        <span class="subtitle">FEATURED PRODUCTS</span>
+        <h2>Browse featured</h2>
+      </header>
+
+      <div class="products-container swiper">
+        <img
+          src="assets/icons/slider-arrow.svg"
+          alt="arrow icon"
+          class="slider-arrow-next swiper-button-next"
+        />
+        <div class="products-slider swiper-wrapper">
+          <!-- PRODUCT 1 -->
+          <div class="product-card swiper-slide">
+            <div class="product-card__image">
+              <div class="product-accent bestseller">BESTSELLER</div>
+              <div class="fav-icon"></div>
+              <div class="swiper-lazy-preloader"></div>
+              <img
+                src="assets/images/product-photo-00.webp"
+                alt="jacket"
+                class="product-photo swiper-lazy"
+              />
+            </div>
+            <div class="product-card__title">
+              <span class="product-name">Dark blue alpine climbing jacket</span>
+              <span class="product-price">€300,00 EUR</span>
+            </div>
+          </div>
+
+          <!-- PRODUCT 2 -->
+          <div class="product-card swiper-slide">
+            <div class="product-card__image">
+              <div class="product-accent limited-edition">LIMITED EDITION</div>
+              <div class="fav-icon"></div>
+              <img
+                src="assets/images/product-photo-01.webp"
+                alt="orange helmet"
+                class="product-photo"
+              />
+            </div>
+            <div class="product-card__title">
+              <span class="product-name">Orange helmet for alpine TOUNDRA</span>
+              <span class="product-price">€300,00 EUR</span>
+            </div>
+          </div>
+
+          <!-- PRODUCT 3 -->
+          <div class="product-card swiper-slide">
+            <div class="product-card__image">
+              <div class="fav-icon"></div>
+              <img
+                src="assets/images/product-photo-02.webp"
+                alt="orange helmet"
+                class="product-photo"
+              />
+            </div>
+            <div class="product-card__title">
+              <span class="product-name">Grey alpine climbing jacket</span>
+              <span class="product-price">€300,00 EUR</span>
+            </div>
+          </div>
+
+          <!-- PRODUCT 4 -->
+          <div class="product-card swiper-slide">
+            <div class="product-card__image">
+              <div class="product-accent bestseller">BESTSELLER</div>
+              <div class="fav-icon"></div>
+              <img
+                src="assets/images/product-photo-00.webp"
+                alt="orange helmet"
+                class="product-photo"
+              />
+            </div>
+            <div class="product-card__title">
+              <span class="product-name">Grey alpine climbing jacket</span>
+              <span class="product-price">€300,00 EUR</span>
+            </div>
+          </div>
+
+          <!-- PRODUCT 5 -->
+          <div class="product-card swiper-slide">
+            <div class="product-card__image">
+              <div class="product-accent bestseller">BESTSELLER</div>
+              <div class="fav-icon"></div>
+              <img
+                src="assets/images/product-photo-00.webp"
+                alt="orange helmet"
+                class="product-photo"
+              />
+            </div>
+            <div class="product-card__title">
+              <span class="product-name">Grey alpine climbing jacket</span>
+              <span class="product-price">€300,00 EUR</span>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-scrollbar scrollbar"></div>
+      </div>
+    </section>
+
+    <section class="product-list container">
+      <div class="page-select">
+        <label for="products">NUMBER OF PRODUCTS</label>
+        <select id="products-quantity" name="products">
+          <option value="8">8</option>
+          <option value="20" selected>14</option>
+          <option value="40">40</option>
+        </select>
+      </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

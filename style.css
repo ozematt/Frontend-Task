@@ -9,7 +9,7 @@
 @font-face {
   font-family: "Inter";
   src: url("/fonts/Inter-SemiBold.woff2") format("woff2");
-  font-weight: 400;
+  font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
@@ -31,6 +31,8 @@
 
   --label-color-olive: #d9d6b0;
   --label-color-purple: #d4b0d9;
+
+  --border-radius: 6px;
 }
 
 * {
@@ -51,9 +53,234 @@ ul {
 
 body {
   font-family: var(--font-family);
-  line-height: 1.6;
+  background: var(--primary-color-white);
+  color: var(--primary-color-black);
 }
 
 button {
   cursor: pointer;
+}
+
+.container {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 42px;
+}
+
+.hidden {
+  display: none;
+}
+
+.navigation-wrapper {
+  padding: 33px 0;
+  background-color: var(--primary-color-white);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.navigation__nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 42px;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.navigation__user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo::before {
+  content: url("/assets/icons/logo-icon--default.svg");
+  width: 24px;
+  height: 24px;
+}
+
+.logo:hover::before {
+  content: url("/assets/icons/logo-icon--fill.svg");
+}
+
+.hero {
+  padding-top: 170px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero img:first-child {
+  padding-bottom: 42px;
+}
+
+.featured-products {
+  margin-top: 96px;
+}
+.featured-products h2 {
+  line-height: 120%;
+  font-size: 42px;
+  margin-top: 4px;
+  letter-spacing: -0.02em;
+}
+
+.featured-products__title {
+  padding-bottom: 42px;
+}
+
+.subtitle {
+  line-height: 150%;
+  letter-spacing: -0.01em;
+}
+
+.product-card:hover {
+  opacity: 0.5;
+}
+
+.product-card__image {
+  position: relative;
+  width: 441px;
+  height: 441px;
+  background: var(--primary-color-gray);
+  border-radius: var(--border-radius);
+}
+.product-photo {
+  width: 380px;
+  height: 380px;
+  object-fit: contain;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.product-accent {
+  line-height: 140%;
+  letter-spacing: -0.01em;
+  border-radius: 15px;
+  padding: 4px 12px;
+  margin: 16px;
+  display: inline-block;
+}
+
+.bestseller {
+  background: var(--label-color-olive);
+}
+.limited-edition {
+  background: var(--label-color-purple);
+}
+
+.fav-icon::after {
+  content: url("assets/icons/fav-icon--default.svg");
+  position: absolute;
+  right: 19px;
+  top: 19px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+.fav-icon:hover::after {
+  content: url("assets/icons/fav-icon--fill.svg");
+}
+
+.product-card__title {
+  padding-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.product-name {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 120%;
+}
+.product-price {
+  line-height: 140%;
+  letter-spacing: -0.01em;
+}
+.products-slider {
+  display: flex;
+  padding-bottom: 64px;
+}
+
+.products-container {
+  position: relative;
+}
+
+.slider-arrow-prev {
+  position: absolute;
+  rotate: 180deg;
+  width: 72px;
+  height: 72px;
+  left: 32px;
+  top: 216px;
+  z-index: 99;
+}
+.slider-arrow-next {
+  position: absolute;
+  width: 72px;
+  height: 72px;
+  right: 32px;
+  top: 216px;
+  z-index: 99;
+}
+
+.swiper-scrollbar {
+  position: relative !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 1px !important;
+}
+
+.product-list label {
+  line-height: 140%;
+  letter-spacing: -0.01em;
+}
+
+.swiper-lazy-preloader {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #ccc;
+  border-top-color: #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
