@@ -324,6 +324,53 @@ button {
   row-gap: 24px;
 }
 
+.banner {
+  padding: 32px 96px;
+  position: relative;
+  grid-column: span 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.banner__background {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+.banner__text {
+  text-align: center;
+}
+
+.banner__subtitle {
+  line-height: 140%;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+.banner__title {
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 120%;
+  letter-spacing: -0.02em;
+}
+
+.banner__btn {
+  border: none;
+  background: var(--primary-color-white);
+  padding: 13px 48px;
+  line-height: 140%;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+.banner__btn span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
 /* .swiper-lazy-preloader {
   width: 24px;
   height: 24px;

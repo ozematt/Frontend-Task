@@ -29,7 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
   //product list elements
   const productsContainer = document.querySelector(".products-container");
   const pageSizeSelect = document.querySelector("#selected-value");
-  console.log(pageSizeSelect.textContent);
 
   let currentPage = 1;
   let currentPageSize = 14;
@@ -108,6 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
     } finally {
       isFetching = false;
       if (hasMore) setupInfiniteScroll();
+      afterRenderProducts();
     }
   };
 
@@ -150,13 +150,44 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // banner logic
 
-  const createBanner = () => {
-    `
+  const banner = `
   <div class="banner">
-    <p class="banner__subtitle">Forma’sint.</p>
-    <p class="banner__title">You'll look and feel like the champion.</p>
-    <button banner__btn>Check this out <img src="" alt="right arrow icon">  </button>
+    <img src="assets/images/banner--desktop.webp" alt="man on ski" class="banner__background">
+    <div class="banner__text">
+      <p class="banner__subtitle">Forma’sint.</p>
+      <h1 class="banner__title">You'll look and feel like the champion.</h1>
+    </div> 
+    <button class="banner__btn"> 
+     <span> 
+      Check this out 
+      <img src="assets/icons/arrow-right-icon.svg" alt="right arrow icon"> 
+     </span> 
+    </button>
   </div>
   `;
-  };
+
+  function afterRenderProducts() {
+    function handleResize() {
+      const products = document.querySelectorAll("[data-product-id]");
+
+      let item;
+
+      if (window.innerWidth > 1000) {
+        item = products[4];
+      } else {
+        item = products[3];
+      }
+
+      if (item) {
+        const existingBanner = document.querySelector(".banner");
+        if (existingBanner) existingBanner.remove();
+
+        item.insertAdjacentHTML("afterend", banner);
+      }
+    }
+
+    window.removeEventListener("resize", handleResize);
+    window.addEventListener("resize", handleResize);
+    handleResize();
+  }
 });
