@@ -155,33 +155,36 @@
 
     <!-- PRODUCT LIST SECTION -->
     <section class="product-list container">
-      <!-- SELECT WRAPPER -->
-      <div class="custom-select-wrapper">
-        <div class="custom-select">
-          <!-- TITLE -->
-          <div class="custom-select__title">
-            <span>NUMBER OF PRODUCTS PER PAGE</span>
-            <div class="selected">
-              <div class="selected__content">
-                <span class="selected__value">14</span>
-                <img
-                  src="assets/icons/arrow-down-icon.svg"
-                  alt="arrow down icon"
-                />
-              </div>
-              <div class="option" data-value="option2">24</div>
+      <!--CUSTOM SELECT -->
+      <div class="select-wrapper">
+        <div class="custom-select" id="custom-select">
+          <label class="custom-select__label"
+            >NUMBER OF PRODUCTS PER PAGE</label
+          >
+          <div>
+            <div class="custom-select__trigger" id="select-trigger">
+              <span
+                class="custom-select__selected"
+                id="selected-value"
+                data-value="14"
+                >14</span
+              >
+              <img src="assets/icons/arrow-down-icon.svg" alt="Arrow down" />
+            </div>
+
+            <div class="custom-select__options hidden" id="select-options">
+              <div class="custom-select__option" data-value="14">14</div>
+
               <div class="option-separator"></div>
-              <div class="option" data-value="option3">36</div>
+              <div class="custom-select__option" data-value="24">24</div>
+              <div class="option-separator"></div>
+              <div class="custom-select__option" data-value="36">36</div>
             </div>
           </div>
-          <!-- OPTIONS -->
-          <!-- <div class="options-container">
-            <div class="option" data-value="option1">14</div>
-            <div class="option" data-value="option2">24</div>
-            <div class="option" data-value="option3">36</div>
-          </div> -->
         </div>
       </div>
+
+      <div class="products-container"></div>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>

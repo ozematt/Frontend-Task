@@ -270,40 +270,58 @@ button {
   letter-spacing: -0.01em;
 }
 
-.custom-select__title {
+.custom-select {
+  /* position: relative; */
   display: flex;
-  align-items: center;
   justify-content: center;
   gap: 24px;
 }
-.selected {
-  position: relative;
-  padding: 12px;
-  border-radius: 6px;
-  border: 1px solid var(--primary-color-gray);
-  text-align: center;
-}
-.selected__value {
-  font-weight: 700;
-}
 
-.selected__content {
+.custom-select__trigger {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 8px;
-  border-bottom: 1px solid black;
+  cursor: pointer;
 }
-.option {
-  padding-top: 12px;
+
+.custom-select__selected {
   font-weight: 700;
 }
-.option-separator {
+
+.custom-select__option {
+  cursor: pointer;
+  font-weight: 700;
+  padding: 6px;
+}
+
+.custom-select__options {
   position: absolute;
+  z-index: 5;
+  text-align: center;
+  background: var(--primary-color-white);
+  border-radius: 6px;
+  border: 1px solid var(--primary-color-gray);
+  padding: 6px;
+}
+
+.option-separator {
   width: 50px;
-  bottom: 40px;
-  left: 12px;
   border-bottom: 1px solid var(--primary-color-gray);
+}
+
+.product-id {
+  padding: 32px;
+  line-height: 140%;
+  letter-spacing: -0.01em;
+}
+
+.products-container {
+  margin-top: 64px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 24px;
+  row-gap: 24px;
 }
 
 /* .swiper-lazy-preloader {
