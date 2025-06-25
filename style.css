@@ -197,7 +197,8 @@ button {
 }
 
 .product-photo {
-  width: 380px;
+  width: 100%;
+  max-width: 380px;
   height: 380px;
   object-fit: contain;
   position: absolute;
@@ -549,6 +550,15 @@ button {
   }
   .slide-menu-container {
     display: block;
+  }
+}
+
+@media (max-width: 1000px) {
+  .products-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .banner {
+    height: 498px;
   }
 }
 
