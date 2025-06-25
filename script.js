@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
       data-product-id="${product.id}" >
         <div class="product-card__image">
           <p class="product-id">ID: ${product.id}</p>
-          <img src="${product.image}" class="product-photo" alt="jacket">
+          <img src="${product.image}" class="product-photo" alt="${product.text}">
         </div>
       </div>
     `;
@@ -170,13 +170,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function handleResize() {
       const products = document.querySelectorAll("[data-product-id]");
 
-      let item;
-
-      if (window.innerWidth > 1000) {
-        item = products[4];
-      } else {
-        item = products[3];
-      }
+      let item = window.innerWidth > 1000 ? products[4] : products[3];
 
       if (item) {
         const existingBanner = document.querySelector(".banner");
@@ -190,4 +184,99 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("resize", handleResize);
     handleResize();
   }
+
+  //// POPUP
+  const modal = document.querySelector("#product-popup");
+  const productId = document.querySelector("#product-id");
+  const productImage = document.querySelector("#product-image");
+  const closeModalBtn = document.querySelector(".close-btn");
+
+  let popupOpen = false;
+
+  // scroll lock
+  function disableScroll() {
+    document.body.style.overflow = "hidden";
+    document.body.style.height = "100vh";
+  }
+
+  // unlock scroll
+  function enableScroll() {
+    document.body.style.overflow = "";
+    document.body.style.height = "";
+  }
+
+  // popup open fn
+  function openModal(product) {
+    productId.innerText = product.id;
+    productImage.setAttribute("src", product.image);
+    productImage.setAttribute("alt", product.name);
+
+    modal.classList.remove("hidden");
+    disableScroll(); // scroll lock
+    popupOpen = true;
+  }
+
+  // popup close
+  function closeModal() {
+    modal.classList.add("hidden");
+    enableScroll(); // unlock scroll
+    popupOpen = false;
+  }
+
+  closeModalBtn.addEventListener("click", closeModal);
+
+  // popup close - click on bg
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+
+  // handle product click
+  document
+    .querySelector(".products-container")
+    .addEventListener("click", (e) => {
+      const productCard = e.target.closest(".product-card");
+      if (!productCard) return;
+      // console.log(productCard);
+
+      const product = {
+        id: productCard.dataset.productId,
+        name: productCard.dataset.name,
+        image: productCard.dataset.image,
+      };
+
+      openModal(product);
+    });
+
+  // SLIDE MENU
+  const hamburgerMenuBtn = document.querySelector("#hamburger-menu");
+  const slideMenu = document.querySelector("#slide-menu");
+  const closeBtn = document.querySelector(".slide-menu__close-btn");
+  const menuBg = document.querySelector(".slide-menu-bg");
+  const menuLinks = document.querySelectorAll(".slide-menu-link");
+
+  hamburgerMenuBtn.addEventListener("click", () => {
+    const isOpen = slideMenu.classList.toggle("active");
+
+    menuBg.classList.toggle("hidden");
+    if (isOpen) {
+      disableScroll(); // lock scroll
+    } else {
+      enableScroll(); // unlock scroll
+    }
+  });
+
+  function closeMenu() {
+    menuBg.classList.add("hidden");
+    slideMenu.classList.remove("active");
+    enableScroll();
+  }
+
+  closeBtn.addEventListener("click", closeMenu);
+  menuBg.addEventListener("click", closeMenu);
+
+  menuLinks.forEach((link) => {
+    link.addEventListener("click", closeMenu);
+  });
 });

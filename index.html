@@ -26,63 +26,108 @@
           <li class="nav-link">
             <a href="#featured-products-section">FEATURED PRODUCTS</a>
           </li>
-          <li class="nav-link"><a href="">PRODUCT LISTING</a></li>
+          <li class="nav-link">
+            <a href="#product-list-section">PRODUCT LISTING</a>
+          </li>
         </ul>
 
         <a href="#" class="navigation__user">
           <img src="assets/icons/user-icon.svg" alt="user icon" />
           <p>FRONTEND DEVELOPER</p>
         </a>
+
+        <!-- SLIDE MENU -->
+        <div class="slide-menu-container">
+          <!-- HAMBURGER ICON -->
+          <button class="hamburger-menu" id="hamburger-menu">
+            <img src="assets/icons/hamburger-icon.svg" alt="hamburger icon" />
+            <p>MENU</p>
+          </button>
+          <!-- NAV-LINKS -->
+          <div class="slide-menu" id="slide-menu">
+            <div class="slide-menu__header">
+              <img src="assets/icons/logo-icon--default.svg" alt="logo icon" />
+              <button class="slide-menu__close-btn">
+                <img src="assets/icons/close-icon.svg" alt="close icon" />
+                <span>CLOSE</span>
+              </button>
+            </div>
+
+            <ul class="slide-menu__nav-links">
+              <li><a href="#" class="slide-menu-link">HOME</a></li>
+              <li>
+                <a href="#featured-products-section" class="slide-menu-link"
+                  >FEATURED PRODUCTS</a
+                >
+              </li>
+              <li>
+                <a href="#product-list-section" class="slide-menu-link"
+                  >PRODUCT LISTING</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="slide-menu-bg hidden"></div>
+        </div>
       </nav>
     </header>
-
+    <!-- SLIDE MENU -->
+    <div class="modal-menu-container"></div>
     <!-- HERO SECTION -->
-    <!-- <section class="hero container">
+    <main class="hero container">
       <header>
-        
-          <img src="assets/icons/logo.svg" alt="FORMA'SINT. - home page" />
-        
+        <img
+          src="assets/icons/logo.svg"
+          alt="FORMA'SINT. - home page"
+          class="page-header"
+        />
       </header>
-
-      <img
-        src="assets/images/hero-image.webp"
-        alt="Ice climber with axe looking up at glacier"
-      />
-    </section> -->
+      <div class="hero-image-container">
+        <img
+          src="assets/images/hero-image--desktop.webp"
+          srcset="
+            assets/images/hero-image--mobile.webp   330w,
+            assets/images/hero-image--desktop.webp 1800w
+          "
+          sizes="(max-width: 480px) 330px, 1800px"
+          alt="Ice climber with axe looking up at glacier"
+          class="hero-image"
+        />
+      </div>
+    </main>
 
     <!-- FEATURED PRODUCTS SECTION  -->
-    <!-- <section class="featured-products container" id="featured-products-section">
+    <section class="featured-products container" id="featured-products-section">
       <header class="featured-products__title">
         <span class="subtitle">FEATURED PRODUCTS</span>
         <h2>Browse featured</h2>
       </header>
 
-      <div class="products-container swiper">
-        <img
-          src="assets/icons/slider-arrow.svg"
-          alt="arrow icon"
-          class="slider-arrow-next swiper-button-next"
-        />
+      <img
+        src="assets/icons/slider-arrow.svg"
+        alt="arrow icon"
+        class="slider-arrow-next swiper-button-next"
+      />
+      <div class="featured-products-container swiper">
         <div class="products-slider swiper-wrapper">
-       
           <div class="product-card swiper-slide">
             <div class="product-card__image">
               <div class="product-accent bestseller">BESTSELLER</div>
               <div class="fav-icon"></div>
-             
+
               <img
                 src="assets/images/product-photo-00.webp"
                 alt="jacket"
                 class="product-photo"
               />
             </div>
+
             <div class="product-card__title">
               <span class="product-name">Dark blue alpine climbing jacket</span>
               <span class="product-price">€300,00 EUR</span>
             </div>
           </div>
 
-         
           <div class="product-card swiper-slide">
             <div class="product-card__image">
               <div class="product-accent limited-edition">LIMITED EDITION</div>
@@ -99,7 +144,6 @@
             </div>
           </div>
 
-      
           <div class="product-card swiper-slide">
             <div class="product-card__image">
               <div class="fav-icon"></div>
@@ -115,7 +159,6 @@
             </div>
           </div>
 
-         
           <div class="product-card swiper-slide">
             <div class="product-card__image">
               <div class="product-accent bestseller">BESTSELLER</div>
@@ -132,7 +175,6 @@
             </div>
           </div>
 
-       
           <div class="product-card swiper-slide">
             <div class="product-card__image">
               <div class="product-accent bestseller">BESTSELLER</div>
@@ -149,12 +191,12 @@
             </div>
           </div>
         </div>
-        <div class="swiper-scrollbar scrollbar"></div>
       </div>
-    </section> -->
+      <div class="swiper-scrollbar scrollbar"></div>
+    </section>
 
     <!-- PRODUCT LIST SECTION -->
-    <section class="product-list container">
+    <section class="product-list container" id="product-list-section">
       <!--CUSTOM SELECT -->
       <div class="select-wrapper">
         <div class="custom-select" id="custom-select">
@@ -185,7 +227,20 @@
       </div>
 
       <div class="products-container"></div>
+
+      <!-- POPUP -->
+      <div id="product-popup" class="popup hidden">
+        <div class="popup-content">
+          <p>ID: <span id="product-id"></span></p>
+          <span class="close-btn"
+            ><img src="assets/icons/close-icon.svg" alt="close icon" />
+            <p>CLOSE</p>
+          </span>
+          <img src="" alt="" id="product-image" class="product-image" />
+        </div>
+      </div>
     </section>
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
   </body>
